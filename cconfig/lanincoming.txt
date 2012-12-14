@@ -1,0 +1,13 @@
+class-map match-any CALL_SIG
+match protocol h323
+match protocol rtcp
+match protocol sip
+
+class-map match-any VOICE
+match protocol rtp audio
+
+policy-map LAN-INCOMING
+class CALL_SIG
+set dscp cs3
+class VOICE
+set dscp ef

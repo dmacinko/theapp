@@ -1,0 +1,4 @@
+policy-map SHAPExxxxxMbps
+class class-default
+shape average xxxxx
+service-policy local-metro-out

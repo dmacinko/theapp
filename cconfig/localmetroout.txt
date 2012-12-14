@@ -1,0 +1,10 @@
+class-map match-any Call_Signaling
+match  dscp cs3
+class-map match-any Realtime_Voice
+match  dscp ef
+
+policy-map local-metro-out
+class Realtime_Voice
+priority percent 33
+class Call_Signaling
+bandwidth percent 2

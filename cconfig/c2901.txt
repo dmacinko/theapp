@@ -1,0 +1,55 @@
+service timestamps debug datetime msec
+service timestamps log datetime msec localtime
+service password-encryption
+
+hostname xxxxx
+
+enable secret xxxxx
+
+aaa new-model
+aaa authentication login default group radius local
+aaa session-id common
+
+clock timezone cet 1
+clock summer-time CEST recurring last Sun Mar 2:00 last Sun Oct 3:00
+
+no ip domain lookup
+
+username xxxxx password xxxxx
+
+interface Loopback0
+description RouterID
+ip address xxxxx xxxxx
+ip ospf 1 area xxxxx
+
+interface GigabitEthernet0/0
+description xxxxx
+ip address xxxxx xxxxx
+ip ospf 1 area xxxxx
+
+interface GigabitEthernet0/1
+description xxxxx
+bandwidth xxxxx
+ip address xxxxx xxxxx
+ip ospf 1 area xxxxx
+
+router ospf 1
+log-adjacency-changes
+
+ip forward-protocol nd
+
+no ip http server
+no ip http secure-server
+
+ip radius source-interface Loopback0
+logging 10.10.200.5
+logging source-interface Loopback0
+
+snmp-server community xxxxx RO
+snmp-server community xxxxx RW
+snmp-server location xxxxx
+radius-server host 10.10.200.112 key xxxxx
+radius-server host 10.10.200.113 key xxxxx
+
+ntp server 10.10.200.250 prefer
+ntp server 10.0.200.250

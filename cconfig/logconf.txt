@@ -1,0 +1,6 @@
+archive
+log config
+logging enable
+logging size 200
+notify syslog contenttype plaintext
+hidekeys

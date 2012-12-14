@@ -1,5 +1,5 @@
 body {
-    background-image: url(/img/navy_blue.png);
+    background-image: url(../img/bgnoise_lg.png);
 }
 #wrapper {
     font-family:  georgia, serif;
@@ -58,6 +58,7 @@ body {
 }
 
 .subnav {
+    font-size: 0.9em;
 }
 
 .table, thead, tbody, th, td {
